@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F358A903C9D61920B87FD00 /* Pods_NumPulsMinus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E98596790769FCD3F05710F /* Pods_NumPulsMinus.framework */; };
+		C93D73181F8741F8000AFE6C /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93D73171F8741F8000AFE6C /* ResultViewController.swift */; };
 		C98D7E511F852AC0004185A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D7E501F852AC0004185A9 /* AppDelegate.swift */; };
 		C98D7E531F852AC0004185A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D7E521F852AC0004185A9 /* ViewController.swift */; };
 		C98D7E561F852AC0004185A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C98D7E541F852AC0004185A9 /* Main.storyboard */; };
@@ -15,6 +17,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16831A92C86AA24E49DF863D /* Pods-NumPulsMinus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NumPulsMinus.release.xcconfig"; path = "Pods/Target Support Files/Pods-NumPulsMinus/Pods-NumPulsMinus.release.xcconfig"; sourceTree = "<group>"; };
+		1E98596790769FCD3F05710F /* Pods_NumPulsMinus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NumPulsMinus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5371989A1EDE321EEAAF2E52 /* Pods-NumPulsMinus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NumPulsMinus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NumPulsMinus/Pods-NumPulsMinus.debug.xcconfig"; sourceTree = "<group>"; };
+		C93D73171F8741F8000AFE6C /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		C98D7E4D1F852AC0004185A9 /* NumPulsMinus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NumPulsMinus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C98D7E501F852AC0004185A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C98D7E521F852AC0004185A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F358A903C9D61920B87FD00 /* Pods_NumPulsMinus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41C7DAD6DE7A32341848D151 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1E98596790769FCD3F05710F /* Pods_NumPulsMinus.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		838843B49F43D2649926E909 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5371989A1EDE321EEAAF2E52 /* Pods-NumPulsMinus.debug.xcconfig */,
+				16831A92C86AA24E49DF863D /* Pods-NumPulsMinus.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C98D7E441F852AC0004185A9 = {
 			isa = PBXGroup;
 			children = (
 				C98D7E4F1F852AC0004185A9 /* NumPulsMinus */,
 				C98D7E4E1F852AC0004185A9 /* Products */,
+				838843B49F43D2649926E909 /* Pods */,
+				41C7DAD6DE7A32341848D151 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +82,7 @@
 			children = (
 				C98D7E501F852AC0004185A9 /* AppDelegate.swift */,
 				C98D7E521F852AC0004185A9 /* ViewController.swift */,
+				C93D73171F8741F8000AFE6C /* ResultViewController.swift */,
 				C98D7E541F852AC0004185A9 /* Main.storyboard */,
 				C98D7E571F852AC0004185A9 /* Assets.xcassets */,
 				C98D7E591F852AC0004185A9 /* LaunchScreen.storyboard */,
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C98D7E5F1F852AC0004185A9 /* Build configuration list for PBXNativeTarget "NumPulsMinus" */;
 			buildPhases = (
+				D7F935B0146BEFCA4EC1BDA1 /* [CP] Check Pods Manifest.lock */,
 				C98D7E491F852AC0004185A9 /* Sources */,
 				C98D7E4A1F852AC0004185A9 /* Frameworks */,
 				C98D7E4B1F852AC0004185A9 /* Resources */,
+				476E2DC0C298F9FEC1431D08 /* [CP] Embed Pods Frameworks */,
+				F447869E779BBCAA75E9F403 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +161,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		476E2DC0C298F9FEC1431D08 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-NumPulsMinus/Pods-NumPulsMinus-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Koloda/Koloda.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Koloda.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NumPulsMinus/Pods-NumPulsMinus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7F935B0146BEFCA4EC1BDA1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NumPulsMinus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F447869E779BBCAA75E9F403 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NumPulsMinus/Pods-NumPulsMinus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C98D7E491F852AC0004185A9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -138,6 +224,7 @@
 			files = (
 				C98D7E531F852AC0004185A9 /* ViewController.swift in Sources */,
 				C98D7E511F852AC0004185A9 /* AppDelegate.swift in Sources */,
+				C93D73181F8741F8000AFE6C /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +359,7 @@
 		};
 		C98D7E601F852AC0004185A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5371989A1EDE321EEAAF2E52 /* Pods-NumPulsMinus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +375,7 @@
 		};
 		C98D7E611F852AC0004185A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16831A92C86AA24E49DF863D /* Pods-NumPulsMinus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

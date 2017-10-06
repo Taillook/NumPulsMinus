@@ -6,6 +6,6 @@ target 'NumPulsMinus' do
   use_frameworks!
 
   # Pods for NumPulsMinus
-  pod 'Koloda', '~> 4.3.1'
+  pod 'Koloda'
 
 end
