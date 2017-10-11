@@ -9,9 +9,12 @@
 import UIKit
 
 class ResultViewController: UIViewController {
+    var ans: Int = 0
+    @IBOutlet weak var ansLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ansLabel.text = String(ans)
     }
     
     override func didReceiveMemoryWarning() {

@@ -9,7 +9,7 @@
 import UIKit
 import Koloda
 
-class ViewController: UIViewController {
+class CalculateViewController: UIViewController {
     private var count: Int = 0
     private var randoms: [Int] = []
     @IBOutlet private weak var cardView: KolodaView!
@@ -39,9 +39,22 @@ class ViewController: UIViewController {
     @IBAction func tappedMinus(_ sender: UIButton) {
         cardView.swipe(.right)
     }
+    
+    @IBAction func TappedCheck(_ sender: UIButton) {
+        performSegue(withIdentifier: "toAnswer",sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "toAnswer") {
+            let vc: ResultViewController = (segue.destination as? ResultViewController)!
+            // ViewControllerのtextVC2にメッセージを設定
+            vc.ans = count
+        }
+    }
+    
 }
 
-extension ViewController: KolodaViewDelegate {
+extension CalculateViewController: KolodaViewDelegate {
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
         print("collect ans is \(count)")
         cardView.removeFromSuperview()
@@ -58,14 +71,14 @@ extension ViewController: KolodaViewDelegate {
         if direction == SwipeResultDirection.right {
             count -= randoms[index]
             print(count)
-        } else if direction == .left {
+        } else if direction == SwipeResultDirection.left {
             count += randoms[index]
             print(count)
         }
     }
 }
 
-extension ViewController: KolodaViewDataSource {
+extension CalculateViewController: KolodaViewDataSource {
     func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
         return .fast
     }

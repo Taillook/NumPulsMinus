@@ -41,7 +41,7 @@
                                 <rect key="frame" x="50" y="316.5" width="275" height="33"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <state key="normal" title="Begin Menu">
+                                <state key="normal" title="Start">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -72,7 +72,7 @@
         <!--Swipe and Calculate-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NumPulsMinus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CalculateViewController" customModule="NumPlusMinus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -91,7 +91,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="CCF-bN-jeb" kind="show" id="WOC-3U-Sqc"/>
+                                    <action selector="TappedCheck:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dTN-cd-htd"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a31-ja-wtO" customClass="KolodaView" customModule="Koloda">
@@ -157,6 +157,7 @@
                         <outlet property="cardView" destination="a31-ja-wtO" id="NDy-u2-p7G"/>
                         <outlet property="minus" destination="WWX-bA-hQb" id="5Cf-lg-Dfd"/>
                         <outlet property="plus" destination="IPS-Ed-1RD" id="lAe-KD-Tma"/>
+                        <segue destination="CCF-bN-jeb" kind="show" identifier="toAnswer" id="7ay-ZY-dD0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -166,19 +167,19 @@
         <!--Answer-->
         <scene sceneID="2Y1-Dd-0vH">
             <objects>
-                <viewController id="CCF-bN-jeb" customClass="ResultViewController" customModule="NumPulsMinus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CCF-bN-jeb" customClass="ResultViewController" customModule="NumPlusMinus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Qh-zu-Q4o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15" textAlignment="center" lineBreakMode="clip" baselineAdjustment="none" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xzG-F5-Qak">
-                                <rect key="frame" x="29.5" y="185" width="315" height="298.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="clip" baselineAdjustment="none" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xzG-F5-Qak">
+                                <rect key="frame" x="29.5" y="333.5" width="315" height="0.0"/>
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="256"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f89-kO-Gne">
-                                <rect key="frame" x="30" y="503.5" width="315" height="30"/>
+                                <rect key="frame" x="30" y="353.5" width="315" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="gMz-Xa-s2n"/>
@@ -193,6 +194,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="allBack:" destination="CCF-bN-jeb" eventType="touchUpInside" id="JxY-b0-cSt"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -208,12 +212,11 @@
                         <viewLayoutGuide key="safeArea" id="k3b-Jv-3aB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Answer" id="vRJ-C5-qNo">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="j4h-iW-Sxu">
-                            <connections>
-                                <action selector="allBack:" destination="CCF-bN-jeb" id="bJy-Xe-RQv"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" id="IgK-ox-TTc"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="ansLabel" destination="xzG-F5-Qak" id="i8Z-at-sQa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="slr-Ch-nWZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
