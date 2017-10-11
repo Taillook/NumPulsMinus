@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6F358A903C9D61920B87FD00 /* Pods_NumPulsMinus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E98596790769FCD3F05710F /* Pods_NumPulsMinus.framework */; };
 		C93D73181F8741F8000AFE6C /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93D73171F8741F8000AFE6C /* ResultViewController.swift */; };
+		C952CAD01F8C851300504D99 /* CustomUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C952CACF1F8C851200504D99 /* CustomUIColor.swift */; };
 		C98D7E511F852AC0004185A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D7E501F852AC0004185A9 /* AppDelegate.swift */; };
 		C98D7E531F852AC0004185A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D7E521F852AC0004185A9 /* ViewController.swift */; };
 		C98D7E561F852AC0004185A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C98D7E541F852AC0004185A9 /* Main.storyboard */; };
@@ -21,7 +22,8 @@
 		1E98596790769FCD3F05710F /* Pods_NumPulsMinus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NumPulsMinus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5371989A1EDE321EEAAF2E52 /* Pods-NumPulsMinus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NumPulsMinus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NumPulsMinus/Pods-NumPulsMinus.debug.xcconfig"; sourceTree = "<group>"; };
 		C93D73171F8741F8000AFE6C /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
-		C98D7E4D1F852AC0004185A9 /* NumPulsMinus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NumPulsMinus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C952CACF1F8C851200504D99 /* CustomUIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUIColor.swift; sourceTree = "<group>"; };
+		C98D7E4D1F852AC0004185A9 /* NumPlusMinus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NumPlusMinus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C98D7E501F852AC0004185A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C98D7E521F852AC0004185A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C98D7E551F852AC0004185A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,7 +74,7 @@
 		C98D7E4E1F852AC0004185A9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C98D7E4D1F852AC0004185A9 /* NumPulsMinus.app */,
+				C98D7E4D1F852AC0004185A9 /* NumPlusMinus.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,6 +84,7 @@
 			children = (
 				C98D7E501F852AC0004185A9 /* AppDelegate.swift */,
 				C98D7E521F852AC0004185A9 /* ViewController.swift */,
+				C952CACF1F8C851200504D99 /* CustomUIColor.swift */,
 				C93D73171F8741F8000AFE6C /* ResultViewController.swift */,
 				C98D7E541F852AC0004185A9 /* Main.storyboard */,
 				C98D7E571F852AC0004185A9 /* Assets.xcassets */,
@@ -94,9 +97,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C98D7E4C1F852AC0004185A9 /* NumPulsMinus */ = {
+		C98D7E4C1F852AC0004185A9 /* NumPlusMinus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C98D7E5F1F852AC0004185A9 /* Build configuration list for PBXNativeTarget "NumPulsMinus" */;
+			buildConfigurationList = C98D7E5F1F852AC0004185A9 /* Build configuration list for PBXNativeTarget "NumPlusMinus" */;
 			buildPhases = (
 				D7F935B0146BEFCA4EC1BDA1 /* [CP] Check Pods Manifest.lock */,
 				C98D7E491F852AC0004185A9 /* Sources */,
@@ -109,9 +112,9 @@
 			);
 			dependencies = (
 			);
-			name = NumPulsMinus;
+			name = NumPlusMinus;
 			productName = NumPulsMinus;
-			productReference = C98D7E4D1F852AC0004185A9 /* NumPulsMinus.app */;
+			productReference = C98D7E4D1F852AC0004185A9 /* NumPlusMinus.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -130,7 +133,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C98D7E481F852AC0004185A9 /* Build configuration list for PBXProject "NumPulsMinus" */;
+			buildConfigurationList = C98D7E481F852AC0004185A9 /* Build configuration list for PBXProject "NumPlusMinus" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -143,7 +146,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C98D7E4C1F852AC0004185A9 /* NumPulsMinus */,
+				C98D7E4C1F852AC0004185A9 /* NumPlusMinus */,
 			);
 		};
 /* End PBXProject section */
@@ -224,6 +227,7 @@
 			files = (
 				C98D7E531F852AC0004185A9 /* ViewController.swift in Sources */,
 				C98D7E511F852AC0004185A9 /* AppDelegate.swift in Sources */,
+				C952CAD01F8C851300504D99 /* CustomUIColor.swift in Sources */,
 				C93D73181F8741F8000AFE6C /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,7 +370,7 @@
 				DEVELOPMENT_TEAM = YS65CTH2V7;
 				INFOPLIST_FILE = NumPulsMinus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.grapebread.NumPulsMinus;
+				PRODUCT_BUNDLE_IDENTIFIER = net.grapebread.NumPlusMinus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -382,7 +386,7 @@
 				DEVELOPMENT_TEAM = YS65CTH2V7;
 				INFOPLIST_FILE = NumPulsMinus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.grapebread.NumPulsMinus;
+				PRODUCT_BUNDLE_IDENTIFIER = net.grapebread.NumPlusMinus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -392,7 +396,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C98D7E481F852AC0004185A9 /* Build configuration list for PBXProject "NumPulsMinus" */ = {
+		C98D7E481F852AC0004185A9 /* Build configuration list for PBXProject "NumPlusMinus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C98D7E5D1F852AC0004185A9 /* Debug */,
@@ -401,7 +405,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C98D7E5F1F852AC0004185A9 /* Build configuration list for PBXNativeTarget "NumPulsMinus" */ = {
+		C98D7E5F1F852AC0004185A9 /* Build configuration list for PBXNativeTarget "NumPlusMinus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C98D7E601F852AC0004185A9 /* Debug */,

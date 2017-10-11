@@ -17,6 +17,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h9M-kt-jfQ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="ic6-bL-6Ot" kind="relationship" relationship="rootViewController" id="29b-hD-OUl"/>
@@ -26,7 +29,7 @@
             </objects>
             <point key="canvasLocation" x="-1591" y="34"/>
         </scene>
-        <!--View Controller-->
+        <!--Begin Menu-->
         <scene sceneID="Pxb-pI-ZQF">
             <objects>
                 <viewController id="ic6-bL-6Ot" sceneMemberID="viewController">
@@ -38,9 +41,15 @@
                                 <rect key="frame" x="50" y="316.5" width="275" height="33"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Begin Menu">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="7dP-ZJ-D9c"/>
                                 </connections>
@@ -54,13 +63,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ifW-fi-8qq"/>
                     </view>
-                    <navigationItem key="navigationItem" id="RIG-kh-qPU"/>
+                    <navigationItem key="navigationItem" title="Begin Menu" id="oKD-pl-c37"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ie-Hh-IMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-788" y="34"/>
         </scene>
-        <!--View Controller-->
+        <!--Swipe and Calculate-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NumPulsMinus" customModuleProvider="target" sceneMemberID="viewController">
@@ -75,6 +84,12 @@
                                 <state key="normal" title="Check Correct Answer">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="CCF-bN-jeb" kind="show" id="WOC-3U-Sqc"/>
                                 </connections>
@@ -86,41 +101,113 @@
                                     <constraint firstAttribute="width" secondItem="a31-ja-wtO" secondAttribute="height" multiplier="21:25" id="yGf-cy-mEZ"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPS-Ed-1RD">
+                                <rect key="frame" x="50" y="507" width="49" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="flG-oV-tJF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                                <state key="normal" title="＋">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedPlus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7xw-oQ-wMV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWX-bA-hQb">
+                                <rect key="frame" x="276" y="507" width="49" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="oKf-Pa-0Q3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                                <state key="normal" title="ー">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedMinus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QNg-MZ-FfN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="WWX-bA-hQb" firstAttribute="top" secondItem="a31-ja-wtO" secondAttribute="bottom" constant="30" id="2xt-xc-nsg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WWX-bA-hQb" secondAttribute="trailing" constant="50" id="3h0-xY-1Q2"/>
+                            <constraint firstItem="IPS-Ed-1RD" firstAttribute="top" secondItem="a31-ja-wtO" secondAttribute="bottom" constant="30" id="Beu-9X-vMm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a31-ja-wtO" secondAttribute="trailing" constant="30" id="DNg-iT-dDZ"/>
                             <constraint firstItem="BO9-Yx-6zL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Jgm-ZR-yDF"/>
                             <constraint firstItem="BO9-Yx-6zL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="QSB-LP-fMu"/>
+                            <constraint firstItem="WWX-bA-hQb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="Qfb-JO-wtM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WWX-bA-hQb" secondAttribute="bottom" constant="110" id="RWC-UQ-rgn"/>
                             <constraint firstItem="a31-ja-wtO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="aeg-CD-j3z"/>
                             <constraint firstItem="a31-ja-wtO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="d4n-Jk-H8m"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IPS-Ed-1RD" secondAttribute="bottom" constant="110" id="f93-0B-fc3"/>
                             <constraint firstItem="a31-ja-wtO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="126" id="kZb-q2-dSb"/>
                             <constraint firstItem="BO9-Yx-6zL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uc8-AO-lJO"/>
+                            <constraint firstItem="IPS-Ed-1RD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="vKh-eB-C6I"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IPS-Ed-1RD" secondAttribute="trailing" constant="20" symbolic="YES" id="vpm-FA-lSg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="sox-LX-Maw">
+                    <navigationItem key="navigationItem" title="Swipe and Calculate" id="sox-LX-Maw">
                         <barButtonItem key="leftBarButtonItem" id="n1q-op-YTv"/>
                     </navigationItem>
                     <connections>
                         <outlet property="cardView" destination="a31-ja-wtO" id="NDy-u2-p7G"/>
+                        <outlet property="minus" destination="WWX-bA-hQb" id="5Cf-lg-Dfd"/>
+                        <outlet property="plus" destination="IPS-Ed-1RD" id="lAe-KD-Tma"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="33.733133433283363"/>
         </scene>
-        <!--Title-->
+        <!--Answer-->
         <scene sceneID="2Y1-Dd-0vH">
             <objects>
                 <viewController id="CCF-bN-jeb" customClass="ResultViewController" customModule="NumPulsMinus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Qh-zu-Q4o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15" textAlignment="center" lineBreakMode="clip" baselineAdjustment="none" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xzG-F5-Qak">
+                                <rect key="frame" x="29.5" y="185" width="315" height="298.5"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="256"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f89-kO-Gne">
+                                <rect key="frame" x="30" y="503.5" width="315" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="gMz-Xa-s2n"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Return to Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xzG-F5-Qak" firstAttribute="leading" secondItem="k3b-Jv-3aB" secondAttribute="leading" constant="30" id="GDn-dU-HdP"/>
+                            <constraint firstItem="k3b-Jv-3aB" firstAttribute="trailing" secondItem="f89-kO-Gne" secondAttribute="trailing" constant="30" id="LUn-aP-Cqc"/>
+                            <constraint firstItem="xzG-F5-Qak" firstAttribute="centerX" secondItem="5Qh-zu-Q4o" secondAttribute="centerX" id="Sju-W3-ehM"/>
+                            <constraint firstItem="xzG-F5-Qak" firstAttribute="centerY" secondItem="5Qh-zu-Q4o" secondAttribute="centerY" id="aZg-P3-Doi"/>
+                            <constraint firstItem="f89-kO-Gne" firstAttribute="leading" secondItem="k3b-Jv-3aB" secondAttribute="leading" constant="30" id="tzj-hd-ajn"/>
+                            <constraint firstItem="f89-kO-Gne" firstAttribute="top" secondItem="xzG-F5-Qak" secondAttribute="bottom" constant="20" id="yDd-5D-laG"/>
+                            <constraint firstItem="xzG-F5-Qak" firstAttribute="width" secondItem="5Qh-zu-Q4o" secondAttribute="height" multiplier="315:667" id="z7K-Bo-aRK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="k3b-Jv-3aB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="vRJ-C5-qNo">
+                    <navigationItem key="navigationItem" title="Answer" id="vRJ-C5-qNo">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="j4h-iW-Sxu">
                             <connections>
                                 <action selector="allBack:" destination="CCF-bN-jeb" id="bJy-Xe-RQv"/>

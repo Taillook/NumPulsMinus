@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     private var count: Int = 0
     private var randoms: [Int] = []
     @IBOutlet private weak var cardView: KolodaView!
+    @IBOutlet weak var plus: UIButton!
+    @IBOutlet weak var minus: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,7 @@ class ViewController: UIViewController {
         for _ in 0..<10 {
             randoms.append(Int(arc4random() % 13 + 1))
         }
+        
         cardView.dataSource = self
         cardView.delegate = self
     }
@@ -29,13 +32,21 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func tappedPlus(_ sender: UIButton) {
+        cardView.swipe(.left)
+    }
 
+    @IBAction func tappedMinus(_ sender: UIButton) {
+        cardView.swipe(.right)
+    }
 }
 
 extension ViewController: KolodaViewDelegate {
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
-        print("a")
+        print("collect ans is \(count)")
         cardView.removeFromSuperview()
+        plus.removeFromSuperview()
+        minus.removeFromSuperview()
     }
     
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
@@ -43,27 +54,26 @@ extension ViewController: KolodaViewDelegate {
     }
     
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
-        print(randoms[index])
+        //print(randoms[index])
         if direction == SwipeResultDirection.right {
-            // implement your functions or whatever here
-            //print("num")
-            //print((koloda.viewWithTag(2) as! UILabel).text!)
+            count -= randoms[index]
+            print(count)
         } else if direction == .left {
-            // implement your functions or whatever here
-            //print("num")
-            //print((koloda.viewWithTag(2) as! UILabel).text!)
+            count += randoms[index]
+            print(count)
         }
     }
 }
 
 extension ViewController: KolodaViewDataSource {
     func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
-        return .default
+        return .fast
     }
     
-    func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
+    func kolodaNumberOfCards(_  koloda: KolodaView) -> Int {
         return randoms.count
     }
+    
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
         let view = UIView(frame: koloda.bounds)
         let label = UILabel(frame: koloda.bounds)
@@ -71,8 +81,8 @@ extension ViewController: KolodaViewDataSource {
         label.font = UIFont.systemFont(ofSize: CGFloat(256))
         label.adjustsFontSizeToFitWidth = true
         label.textAlignment = NSTextAlignment.center
-        label.tag = 2
-        view.backgroundColor = UIColor.gray
+        label.textColor = UIColor.white
+        view.backgroundColor = UIColor.hex(hexStr: "007AFF", alpha: 1)
         view.addSubview(label)
         return view
     }
